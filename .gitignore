@@ -1,0 +1,5 @@
+.DS_STORE
+.vagrant
+/vendor
+.env
+/node_moduleas
