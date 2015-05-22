@@ -13,6 +13,10 @@
 
 Route::get('/', 'WelcomeController@index');
 
+Route::get('/categories', 'CategoriesController@index');
+Route::post('/categories', 'CategoriesController@store');
+Route::get('/categories/create', 'CategoriesController@create');
+
 Route::get('exemplo', 'WelcomeController@exemplo');
 
 Route::get('admin/categories', 'AdminCategoriesController@index');
@@ -24,3 +28,4 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
