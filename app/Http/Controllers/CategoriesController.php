@@ -28,7 +28,14 @@ class CategoriesController extends Controller
         return view('categories.create');
     }
 
-    public function store(Request $request)
+    public function edit($id)
+    {
+        $category = $this->categoryModel->find($id);
+
+        return view('categories.edit', compact('category'));
+    }
+
+    public function store(Requests\CategoryRequest $request)
     {
         $input = $request->all();
 
@@ -37,4 +44,19 @@ class CategoriesController extends Controller
 
         return redirect('categories');
     }
+
+    public function update(Requests\CategoryRequest $request, $id)
+    {
+        $this->categoryModel->find($id)->update($request->all());
+
+        return redirect('categories');
+    }
+
+    public function destroy($id)
+    {
+        $this->categoryModel->find($id)->delete();
+
+        return redirect('categories');
+    }
+
 }

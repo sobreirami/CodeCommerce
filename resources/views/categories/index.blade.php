@@ -4,7 +4,8 @@
     <div class="container">
 
         <h1>Categories</h1>
-
+        <br>
+        <a href="{{ route('categories.create')  }}">New Category</a>
         <table class="table">
             <tr>
                 <th>Id</th>
@@ -18,7 +19,10 @@
                     <td>{{ $category->id }}</td>
                     <td>{{ $category->name }}</td>
                     <td>{{ $category->description }}</td>
-                    <td></td>
+                    <td>
+                        <a href="{{ route('categories.edit', [ 'id' => $category->id ])  }}">Editar</a>
+                        <a href="{{ route('categories.destroy', [ 'id' => $category->id ])  }}">Delete</a>
+                    </td>
                 </tr>
             @endforeach
 
