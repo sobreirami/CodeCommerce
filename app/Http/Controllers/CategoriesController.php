@@ -42,21 +42,21 @@ class CategoriesController extends Controller
         $category = $this->categoryModel->fill($input);
         $category->save();
 
-        return redirect('categories');
+        return redirect(route('categories'));
     }
 
     public function update(Requests\CategoryRequest $request, $id)
     {
         $this->categoryModel->find($id)->update($request->all());
 
-        return redirect('categories');
+        return redirect(route('categories'));
     }
 
     public function destroy($id)
     {
         $this->categoryModel->find($id)->delete();
 
-        return redirect('categories');
+        return redirect(route('categories'));
     }
 
 }

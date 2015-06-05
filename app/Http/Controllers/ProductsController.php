@@ -47,21 +47,21 @@ class ProductsController extends Controller
         $product = $this->productModel->fill($input);
         $product->save();
 
-        return redirect('products');
+        return redirect(route('products'));
     }
 
     public function update(Requests\ProductRequest $request, $id)
     {
         $this->productModel->find($id)->update($request->all());
 
-        return redirect('products');
+        return redirect(route('products'));
     }
 
     public function destroy($id)
     {
         $this->productModel->find($id)->delete();
 
-        return redirect('products');
+        return redirect(route('products'));
     }
 
 }
