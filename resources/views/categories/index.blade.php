@@ -5,7 +5,7 @@
 
         <h1>Categories</h1>
         <br>
-        <a href="{{ route('categories.create')  }}">New Category</a>
+        <a href="{{ route('categories.create')  }}" >New Category</a>
         <table class="table">
             <tr>
                 <th>Id</th>
