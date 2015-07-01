@@ -15,7 +15,7 @@
 
         @endif
 
-        {!! Form::open(['route' => 'products.store', 'method' => 'post']) !!}
+        {!! Form::open(['route' => ['products.images.store', $product->id], 'method' => 'post', 'enctype' => 'multipart/form-data']) !!}
 
         <div class="form-group">
             {!! Form::label('image', 'Image:') !!}

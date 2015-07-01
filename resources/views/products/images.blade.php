@@ -5,7 +5,7 @@
 
         <h1>Images of {{ $product->name  }}</h1>
         <br>
-        <a href="" >New Image</a>
+        <a href="{{ route('products.images.create', $product->id) }}" >New Image</a>
         <table class="table">
             <tr>
                 <th>Id</th>
@@ -17,7 +17,9 @@
             @foreach($product->images as $image)
                 <tr>
                     <td>{{ $image->id }}</td>
-                    <td></td>
+                    <td>
+                        <img src="{{ url('uploads/' . $image->id . '.' . $image->extension) }} " width="80" />
+                    </td>
                     <td>{{ $image->extension }}</td>
                     <td>
 
@@ -26,6 +28,8 @@
             @endforeach
 
         </table>
+
+        <a href="{{ route('products')  }}" class="btn-default">Voltar</a>
 
     </div>
 @endsection

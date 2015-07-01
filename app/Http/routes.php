@@ -26,8 +26,8 @@ Route::group(['prefix' => 'admin', 'where' => ['id' => '[0-9]+']], function()
         {
 
             Route::get('{id}/product', ['as' => 'products.images', 'uses' => 'ProductsController@images']);
-            Route::get('create/{id}/product', ['as' => 'products.create_image', 'uses' => 'ProductsController@createImage']);
-            Route::post('store/{id}/product', ['as' => 'products.create_image', 'uses' => 'ProductsController@createImage']);
+            Route::get('create/{id}/product', ['as' => 'products.images.create', 'uses' => 'ProductsController@createImage']);
+            Route::post('store/{id}/product', ['as' => 'products.images.store', 'uses' => 'ProductsController@storeImage']);
 
         });
 
