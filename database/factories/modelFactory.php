@@ -24,3 +24,9 @@ $factory->define('CodeCommerce\Category', function ($faker) {
         'description' => $faker->sentence()
     ];
 });
+
+$factory->define('CodeCommerce\Tag', function ($faker) {
+    return [
+        'name' => $faker->word()
+    ];
+});
