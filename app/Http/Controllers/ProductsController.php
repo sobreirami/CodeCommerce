@@ -64,4 +64,24 @@ class ProductsController extends Controller
         return redirect(route('products'));
     }
 
+    public function images($id)
+    {
+        $product = $this->productModel->find($id);
+
+        return view('products.images', compact('product'));
+    }
+
+    public function createImage($id)
+    {
+        $product = $this->productModel->find($id);
+
+        return view('products.create_image', compact('product'));
+    }
+
+    public function storeImage(Request $request, $id)
+    {
+
+    }
+
+
 }
