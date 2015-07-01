@@ -3,3 +3,4 @@
 /vendor
 .env
 /node_moduleas
+.idea
