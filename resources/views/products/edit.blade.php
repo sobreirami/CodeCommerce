@@ -38,6 +38,17 @@
         </div>
 
         <div class="form-group">
+            {!! Form::label('featured','Featured:') !!}
+            {!! Form::select('featured', array('0' => 'Não', '1' => 'Sim'), $product->featured) !!}
+        </div>
+
+        <div class="form-group">
+            {!! Form::label('recommend','Recommend:') !!}
+            Sim {!! Form::radio('recommend', '1', ($product->recommend == 1) ? true : false); !!}
+            Não {!! Form::radio('recommend', '0', ($product->recommend == 0) ? true : false) !!}
+        </div>
+
+        <div class="form-group">
             {!! Form::submit('Edit Product', ['class' => 'btn btn-primary form-control']) !!}
         </div>
 

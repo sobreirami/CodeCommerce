@@ -5,7 +5,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 
-    protected $fillable = ['category_id', 'name', 'description', 'price', 'featured', 'recommended'];
+    protected $fillable = ['category_id', 'name', 'description', 'price', 'featured', 'recommend'];
 
     public function category()
     {
@@ -29,9 +29,17 @@ class Product extends Model
 
     public function getTagListAttribute()
     {
-        $tags = $this->tags->lists('name');
+        return $this->tags->lists('name');
+    }
 
-        return implode(",", $tags);
+    public function scopeFeatured($query)
+    {
+        return $query->where('featured', '=', 1);
+    }
+
+    public function scopeRecommend($query)
+    {
+        return $query->where('recommend', '=', 1);
     }
 
 }
