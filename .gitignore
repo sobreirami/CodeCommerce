@@ -2,5 +2,5 @@
 .vagrant
 /vendor
 .env
-/node_moduleas
+/node_modules
 .idea
