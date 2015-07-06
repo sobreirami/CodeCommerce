@@ -38,6 +38,13 @@ Route::get('/', 'StoreController@index');
 Route::get('category/{id}', ['as' => 'store.category', 'uses' => 'StoreController@category']);
 Route::get('product/{id}', ['as' => 'store.product', 'uses' => 'StoreController@product']);
 
+Route::group(['prefix' => 'cart', 'where' => ['id' => '[0-9]+']], function()
+{
+    Route::get('', ['as' => 'cart', 'uses' => 'CartController@index']);
+    Route::get('add/{id}', ['as' => 'add.cart', 'uses' => 'CartController@add']);
+
+});
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
