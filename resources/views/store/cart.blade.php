@@ -20,9 +20,9 @@
                         <tbody>
                         @foreach($cart->all() as $k => $items)
                             <tr>
-                                <td class="cart_product"><a href="#">Image</a></td>
-                                <td class="cart_description"><h4><a href="#">{{ $items['name']  }}</a></h4></td>
-                                <td class="cart_price">{{ $items['price']  }}</td>
+                                <td class="cart_product"><a href="{{ route('store.product', ['id' => $k])  }}">Image</a></td>
+                                <td class="cart_description"><h4><a href="{{ route('store.product', ['id' => $k])  }}">{{ $items['name']  }}</a></h4></td>
+                                <td class="cart_price">R$ {{ $items['price']  }}</td>
                                 <td class="cart_quantity">{{ $items['qtd']  }}</td>
                                 <td>
                                     <p class="cart_total_price">R$ {{ $items['qtd'] * $items['price'] }} </p>
@@ -32,6 +32,7 @@
                         @endforeach
                         </tbody>
                     </table>
+                    Total: R$ {{ $cart->getTotal()  }}
 
                 </div>
 
