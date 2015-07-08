@@ -18,7 +18,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($cart->all() as $k => $items)
+                        @forelse($cart->all() as $k => $items)
                             <tr>
                                 <td class="cart_product"><a href="{{ route('store.product', ['id' => $k])  }}">Image</a></td>
                                 <td class="cart_description"><h4><a href="{{ route('store.product', ['id' => $k])  }}">{{ $items['name']  }}</a></h4></td>
@@ -29,10 +29,19 @@
                                 </td>
                                 <td class="cart_quantity_delete"><a href="{{ route('remove.cart', ['id' => $k])  }}">Delete</a></td>
                             </tr>
-                        @endforeach
+                        @empty
+                            <tr>
+                                <td colspan="5"><p>Não há itens no carrinho</p></td>
+                            </tr>
+                        @endforelse
+                        <tr>
+                            <td colspan="6"> <div class="pull-right"><span>Total: R$ {{ $cart->getTotal()  }}</span>
+                                <a href="#" class="btn btn-success">Finalizar pedido<a>
+                                </div></td>
+                        </tr>
                         </tbody>
                     </table>
-                    Total: R$ {{ $cart->getTotal()  }}
+
 
                 </div>
 
