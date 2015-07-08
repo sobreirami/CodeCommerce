@@ -27,7 +27,7 @@
                                 <td>
                                     <p class="cart_total_price">R$ {{ $items['qtd'] * $items['price'] }} </p>
                                 </td>
-                                <td class="cart_quantity_delete"><a href="#">Delete</a></td>
+                                <td class="cart_quantity_delete"><a href="{{ route('remove.cart', ['id' => $k])  }}">Delete</a></td>
                             </tr>
                         @endforeach
                         </tbody>

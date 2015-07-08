@@ -42,7 +42,7 @@ Route::group(['prefix' => 'cart', 'where' => ['id' => '[0-9]+']], function()
 {
     Route::get('', ['as' => 'cart', 'uses' => 'CartController@index']);
     Route::get('add/{id}', ['as' => 'add.cart', 'uses' => 'CartController@add']);
-
+    Route::get('remove/{id}', ['as' => 'remove.cart', 'uses' => 'CartController@destroy']);
 });
 
 Route::controllers([
