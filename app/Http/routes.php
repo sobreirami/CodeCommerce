@@ -45,6 +45,8 @@ Route::group(['prefix' => 'cart', 'where' => ['id' => '[0-9]+']], function()
     Route::get('remove/{id}', ['as' => 'remove.cart', 'uses' => 'CartController@destroy']);
 });
 
+Route::get('checkout/placeOrder', ['as' => 'checkout.place', 'uses' => 'CheckoutController@place']);
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
